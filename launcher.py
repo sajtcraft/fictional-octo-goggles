@@ -116,7 +116,7 @@ def launch_minecraft():
     except Exception as e:
         messagebox.showerror("Error", f"Unexpected error: {e}")
 
-def open_news_page():
+def open_servers_page():
     webbrowser.open(news_url)
 
 root = tk.Tk()
@@ -127,6 +127,6 @@ tk.Label(root, text="SajtRealms", font=("Arial", 12)).pack(pady=20)
 
 tk.Button(root, text="Install Minecraft", font=("Arial", 12), command=open_download_page).pack(pady=10)
 tk.Button(root, text="Launch Client", font=("Arial", 12), command=launch_minecraft).pack(pady=10)
-tk.Button(root, text="Changelog", font=("Arial", 12), command=open_news_page).pack(pady=10)
+tk.Button(root, text="Changelog", font=("Arial", 12), command=open_servers_page).pack(pady=10)
 
 root.mainloop()
