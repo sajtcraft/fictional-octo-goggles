@@ -8,13 +8,13 @@ downloads_folder = os.path.expanduser("~/Downloads")
 appx_filename = "Minecraft-1.7.0.13.Appx"
 appx_path = os.path.join(downloads_folder, appx_filename)
 download_url = "https://drive.google.com/file/d/1naIu8cfXUi2flMV4Gsb-pQ8th4yZXz-m/view?usp=sharing"
-servers_url = "https://sajtrealms.blogspot.com/2024/10/server-list.html#comments"
+news_url = "https://sajtrealms.blogspot.com"
 externalservers_url = "https://raw.githubusercontent.com/sajtcraft/fictional-octo-goggles/refs/heads/main/externalservers.txt"
 
 # URL for the latest launcher script and version check file
 launcher_url = "https://raw.githubusercontent.com/sajtcraft/fictional-octo-goggles/refs/heads/main/launcher.py"
 version_check_url = "https://raw.githubusercontent.com/sajtcraft/fictional-octo-goggles/refs/heads/main/version.txt"
-current_version = "1.0.0"
+current_version = "1.0.1"
 
 # Paths for externalservers and launcher
 mc_data_path = os.path.join(os.path.expanduser("~"), 'AppData', 'Local', 'Packages',
@@ -117,7 +117,7 @@ def launch_minecraft():
         messagebox.showerror("Error", f"Unexpected error: {e}")
 
 def open_servers_page():
-    webbrowser.open(servers_url)
+    webbrowser.open(news_url)
 
 root = tk.Tk()
 root.title("Minecraft Launcher")
@@ -127,6 +127,6 @@ tk.Label(root, text="SajtRealms", font=("Arial", 12)).pack(pady=20)
 
 tk.Button(root, text="Install Minecraft", font=("Arial", 12), command=open_download_page).pack(pady=10)
 tk.Button(root, text="Launch Client", font=("Arial", 12), command=launch_minecraft).pack(pady=10)
-tk.Button(root, text="View Servers", font=("Arial", 12), command=open_servers_page).pack(pady=10)
+tk.Button(root, text="Changelog", font=("Arial", 12), command=open_news_page).pack(pady=10)
 
 root.mainloop()
