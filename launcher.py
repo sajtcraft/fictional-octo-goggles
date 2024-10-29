@@ -60,7 +60,7 @@ def download_server_file():
         print("Couldn’t download externalservers.txt:", e)
 
 def replace_server_file():
-    target_server_file = os.path.join(mc_data_path, 'externalservers.txt')
+    target_server_file = os.path.join(mc_data_path, 'external_servers.txt')
     try:
         shutil.copy(local_externalservers, target_server_file)
         print("Replaced externalservers.txt in Minecraft folder")
