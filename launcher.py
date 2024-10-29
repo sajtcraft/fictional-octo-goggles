@@ -116,7 +116,7 @@ def launch_minecraft():
     except Exception as e:
         messagebox.showerror("Error", f"Unexpected error: {e}")
 
-def open_servers_page():
+def open_news_page():
     webbrowser.open(news_url)
 
 root = tk.Tk()
