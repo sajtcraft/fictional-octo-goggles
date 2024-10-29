@@ -12,8 +12,8 @@ servers_url = "https://sajtrealms.blogspot.com/2024/10/server-list.html#comments
 externalservers_url = "https://raw.githubusercontent.com/sajtcraft/fictional-octo-goggles/refs/heads/main/externalservers.txt"
 
 # URL for the latest launcher script and version check file
-launcher_url = "https://your-website.com/path/to/launcher.py"
-version_check_url = "https://your-website.com/path/to/version.txt"
+launcher_url = "https://raw.githubusercontent.com/sajtcraft/fictional-octo-goggles/refs/heads/main/launcher.py"
+version_check_url = "https://raw.githubusercontent.com/sajtcraft/fictional-octo-goggles/refs/heads/main/version.txt"
 current_version = "1.0.0"
 
 # Paths for externalservers and launcher
