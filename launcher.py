@@ -14,13 +14,32 @@ externalservers_url = "https://raw.githubusercontent.com/sajtcraft/fictional-oct
 # URL for the latest launcher script and version check file
 launcher_url = "https://raw.githubusercontent.com/sajtcraft/fictional-octo-goggles/refs/heads/main/launcher.py"
 version_check_url = "https://raw.githubusercontent.com/sajtcraft/fictional-octo-goggles/refs/heads/main/version.txt"
-current_version = "1.0.1"
+current_version = "1.0.2"
 
 # Paths for externalservers and launcher
 mc_data_path = os.path.join(os.path.expanduser("~"), 'AppData', 'Local', 'Packages',
                             'Microsoft.MinecraftUWP_8wekyb3d8bbwe', 'LocalState', 'games', 'com.mojang', 'minecraftpe')
 local_externalservers = os.path.join(os.path.dirname(__file__), 'externalservers.txt')
 local_launcher = os.path.join(os.path.dirname(__file__), 'launcher.py')
+script_path = os.path.abspath(__file__)
+
+# Hide the script file on close and unhide it on start
+def hide_script():
+    try:
+        subprocess.run(f"attrib +h {script_path}", shell=True)
+        print("Script hidden in File Explorer.")
+    except Exception as e:
+        print("Failed to hide the script:", e)
+
+def unhide_script():
+    try:
+        subprocess.run(f"attrib -h {script_path}", shell=True)
+        print("Script unhidden in File Explorer.")
+    except Exception as e:
+        print("Failed to unhide the script:", e)
+
+# Call unhide function on startup
+unhide_script()
 
 # Function to check for launcher updates
 def check_for_updates():
@@ -79,6 +98,7 @@ def cleanup():
             print("Removed local externalservers.txt")
         except Exception as e:
             print("Error deleting file:", e)
+    hide_script()  # Hide the script on exit
 
 atexit.register(cleanup)
 
